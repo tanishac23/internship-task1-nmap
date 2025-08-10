@@ -49,7 +49,9 @@ IPv4 Address. . . . . . . . . . . : 172.16.220.238
 Subnet Mask . . . . . . . . . . . : 255.255.252.0
 Default Gateway . . . . . . . . . : 172.16.220.1
 ```
+📷 **Screenshot:** 
 https://github.com/tanishac23/internship-task1-nmap/blob/main/images/IpConfigOutput.png
+
 ---
 
 ## 🔎 Step 2: Scanning Online Devices on My Network
