@@ -49,7 +49,7 @@ IPv4 Address. . . . . . . . . . . : 172.16.220.238
 Subnet Mask . . . . . . . . . . . : 255.255.252.0
 Default Gateway . . . . . . . . . : 172.16.220.1
 ```
-
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/IpConfigOutput.png
 ---
 
 ## 🔎 Step 2: Scanning Online Devices on My Network
@@ -73,11 +73,13 @@ nmap -sn 172.16.220.0/22
   - MAC Address (if available)  
   - Vendor Name  
 
-📷 **Screenshot:** `<!-- ADD SS HERE -->`
+📷 **Screenshot:** 
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/PingSweep1.png
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/PingSweep2.png
 
 ---
 
-## ✅ Step 5: Scan a Live Host and Discover Open Ports
+## ✅ Step 3: Scan a Live Host and Discover Open Ports
 
 After identifying active devices, I scanned `172.16.220.11` for open ports.
 
@@ -96,11 +98,12 @@ nmap -sS 172.16.220.11
   - **80/tcp** – HTTP  
 - MAC vendor: Netgear (likely a router or switch)  
 
-📷 **Screenshot:** `<!-- ADD SS HERE -->`
+📷 **Screenshot:** 
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/SuccessfulPortScan.png
 
 ---
 
-## ✅ Step 6: Scanning Specific Ports on Multiple IPs
+## ✅ Step 4: Scanning Specific Ports on Multiple IPs
 
 ### 🧠 Command Used:
 ```bash
@@ -121,11 +124,12 @@ nmap -sS -p 21,22,23,80,443 172.16.220.1-13
 - Found devices with various ports open.
 - Example: Some devices had only SSH & HTTP, some none.
 
-📷 **Screenshot:** `<!-- ADD SS HERE -->`
+📷 **Screenshot:** 
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/SuccessfulPortScan.png
 
 ---
 
-## ✅ Step 7: Aggressive OS Detection & Service Version Detection
+## ✅ Step 5: Aggressive OS Detection & Service Version Detection
 
 ### 🧠 Command Used:
 ```bash
@@ -145,11 +149,14 @@ nmap -A 172.16.220.11
 - OS Guess: Linux 3.X / 4.X  
 - MAC Vendor: Netgear  
 
-📷 **Screenshot:** `<!-- ADD SS HERE -->`
+📷 **Screenshot:** 
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/AggresiveScan1.png
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/AggresiveScan2.png
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/AggresiveScan3.png
 
 ---
 
-## ✅ Step 8: Verbose Scan
+## ✅ Step 6: Verbose Scan
 
 ### 🧠 Command Used:
 ```bash
@@ -166,26 +173,36 @@ nmap -v 172.16.220.11
 - Open ports: **22** (SSH), **80** (HTTP)  
 - MAC vendor: Netgear  
 
-📷 **Screenshot:** `<!-- ADD SS HERE -->`
+📷 **Screenshot:** 
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/Verbosescan.png
 
 ---
 
-## ✅ Step 9: Script Scan using `-sC`
+## ✅ Step 7: Scanning Specific Ports on Multiple IPs
 
 ### 🧠 Command Used:
 ```bash
-nmap -sC 172.16.220.11
+nmap -sS -p 21,22,23,80,443 172.16.220.1-13
 ```
 
 **📖 Explanation:**
-- Runs **default NSE scripts** for deeper information.
+- -sS – SYN (stealth) scan, faster and less detectable.
+-p 21,22,23,80,443 – Scan only these common ports:
+21 → FTP
+22 → SSH
+23 → Telnet
+80 → HTTP
+443 → HTTPS
+- 172.16.220.1-13 – Targets IPs from .1 to .13.
 
 **📊 Output Summary:**
-- **22/tcp** – SSH (ssh-hostkey script failed)  
-- **80/tcp** – HTTP (no HTML title found)  
-- MAC vendor: Netgear  
+- Identified open ports on multiple hosts in the given range.
+- Several devices responded with open services.
+- Helps focus on high-value ports instead of scanning all 65,535.
 
-📷 **Screenshot:** `<!-- ADD SS HERE -->`
+📷 **Screenshot:** 
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/multi_IP_SpecificPort1.png
+https://github.com/tanishac23/internship-task1-nmap/blob/main/images/multi_IP_SpecificPort2.png
 
 ---
 
